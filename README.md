@@ -18,18 +18,29 @@ Act as a rigorous performance engineer to analyze code bases, architecture plans
 
 ## Installation
 
-### Method 1: Packaged `.skill` File
-Download [turbo-stack.skill](./turbo-stack.skill) and run the install command in your terminal:
+You can install skills from this repository into any of the 18+ supported AI coding assistants (like Claude Code, Cursor, Codex, Windsurf, or Cline) using Vercel Labs' universal `skills` CLI.
+
+### Universal CLI Installation (Recommended)
+Run the following command at the root of your project:
 ```bash
-claude skill add ./turbo-stack.skill
+npx skills add ComputerKeeda/agent-skills --skill turbo-stack
 ```
 
-### Method 2: Manual / Custom Lock File
-You can reference the raw `SKILL.md` directly in your workspace `skills-lock.json` file:
+To install all skills currently available in this repository:
+```bash
+npx skills add ComputerKeeda/agent-skills --skill '*'
+```
+
+### Manual Installation
+You can reference the skill directly in your workspace `skills-lock.json` file:
 ```json
-"turbo-stack": {
-  "source": "ComputerKeeda/agent-skills",
-  "sourceType": "github",
-  "skillPath": "skills/turbo-stack/SKILL.md"
+{
+  "skills": {
+    "turbo-stack": {
+      "source": "ComputerKeeda/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/turbo-stack/SKILL.md"
+    }
+  }
 }
 ```
